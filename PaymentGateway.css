@@ -1,0 +1,572 @@
+.payment-gateway {
+  max-width: 600px;
+  max-height: 90vh;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  position: relative;
+  overflow-y: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f3f4f6;
+  color: #666;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.close-button:hover {
+  background: #e5e7eb;
+  color: #333;
+  transform: scale(1.1);
+}
+
+.close-button:active {
+  transform: scale(0.95);
+}
+
+.payment-content {
+  padding-top: 0.5rem;
+}
+
+.payment-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.payment-header h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mode-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #4CAF50;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4CAF50;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-btn:hover {
+  background: #f0f9f0;
+}
+
+.mode-btn.active {
+  background: #4CAF50;
+  color: white;
+}
+
+.currency-selector {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.currency-group {
+  flex: 1;
+}
+
+.currency-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.currency-dropdown {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.currency-dropdown:hover {
+  border-color: #4CAF50;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.payment-method-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #4b5563;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.payment-method-btn:hover {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.payment-method-btn.active {
+  border-color: #4CAF50;
+  background: #f0fdf4;
+  color: #4CAF50;
+}
+
+.payment-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.upi-apps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.upi-app-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.upi-app-btn img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.upi-app-btn span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.upi-app-btn:hover {
+  border-color: #4CAF50;
+  transform: translateY(-2px);
+}
+
+.upi-app-btn.active {
+  border-color: #4CAF50;
+  background: #f0f9f0;
+}
+
+.bank-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bank-dropdown,
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.2s;
+}
+
+.bank-dropdown:hover,
+.input-field:hover {
+  border-color: #4CAF50;
+}
+
+.bank-dropdown:focus,
+.input-field:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+.quick-amounts {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.quick-amount-btn {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  transition: all 0.2s;
+  min-width: 100px;
+}
+
+.quick-amount-btn:hover {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.quick-amount-btn.active {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}
+
+.amount-input {
+  margin-bottom: 1rem;
+}
+
+.amount-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.amount-limits {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.error-message {
+  color: #e53e3e;
+  background: #fff5f5;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.bank-details {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.bank-details h3 {
+  margin: 0 0 1rem;
+  color: #333;
+}
+
+.bank-details p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.bank-details .note {
+  margin-top: 1rem;
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #43a047;
+}
+
+.submit-btn:disabled {
+  background: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.transactions {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.transactions h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 1rem;
+}
+
+.no-transactions {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transaction-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.transaction-item.completed {
+  border-left: 4px solid #4CAF50;
+}
+
+.transaction-item.pending {
+  border-left: 4px solid #f59e0b;
+}
+
+.transaction-item.failed {
+  border-left: 4px solid #e53e3e;
+}
+
+.transaction-type {
+  color: #666;
+}
+
+.transaction-amount {
+  font-weight: 500;
+}
+
+.transaction-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.transaction-status.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.transaction-status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.transaction-status.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.transaction-date {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 480px) {
+  .payment-gateway {
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+    padding: 1rem;
+  }
+
+  .payment-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .mode-toggle {
+    flex-direction: column;
+  }
+
+  .mode-btn {
+    width: 100%;
+  }
+
+  .currency-selector {
+    flex-direction: column;
+    padding: 0.75rem;
+  }
+
+  .payment-methods {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .payment-method-btn {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .upi-apps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-amounts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .amount-input {
+    width: 100%;
+  }
+
+  .amount-field {
+    width: 100%;
+  }
+
+  .bank-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .bank-form input,
+  .bank-form select {
+    width: 100%;
+  }
+
+  .transaction-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .transaction-date {
+    text-align: right;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .payment-gateway {
+    margin: 1rem;
+    padding: 1.25rem;
+  }
+
+  .payment-methods {
+    gap: 0.75rem;
+  }
+
+  .payment-method-btn {
+    padding: 0.5rem 1rem;
+    min-width: 100px;
+  }
+
+  .quick-amounts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bank-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .bank-form input,
+  .bank-form select {
+    width: 100%;
+  }
+
+  .transaction-item {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .transaction-date {
+    grid-column: 1 / -1;
+    text-align: right;
+  }
+}
+
+@media (min-width: 769px) {
+  .payment-gateway {
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .payment-methods {
+    gap: 1rem;
+  }
+
+  .payment-method-btn {
+    padding: 0.75rem 1.5rem;
+    min-width: 150px;
+  }
+
+  .quick-amounts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .bank-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .transaction-item {
+    grid-template-columns: auto 1fr auto auto;
+  }
+} 
